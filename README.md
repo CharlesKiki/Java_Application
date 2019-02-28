@@ -39,3 +39,7 @@ Java的语言特性，以及Web开发，桌面应用程序，移动开发的学�
 当载入项目之后，位于IDE下方的任务栏中，以Servers一栏，在此处根据提示新增服务器。这个服务器容器是当前主机中安装的Tomcat。然后拖动项目至该服务器中。对项目中指定的文件右键运行即可查看服务器的运行结果。
 ## BasicJava项目
 该项目是纯粹的Java项目，目的在于学习Java的IDE(Eclispe)开发技巧，语言特性，编程模式的代码样例。
+
+当第一次编写HelloWorld时，应该注意新建Java项目。
+## 如何调试
+Tomcat默认的访问是http://localhost:8080/HelloWorld/index.jsp 这样的形式，省略掉webapps。
