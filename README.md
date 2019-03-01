@@ -41,5 +41,6 @@ Java的语言特性，以及Web开发，桌面应用程序，移动开发的学�
 该项目是纯粹的Java项目，目的在于学习Java的IDE(Eclispe)开发技巧，语言特性，编程模式的代码样例。
 
 当第一次编写HelloWorld时，应该注意新建Java项目。
+虽然使用Eclispe创建的项目，但是使用VScode依然可以轻松的编辑并且调试。
 ## 如何调试
 Tomcat默认的访问是http://localhost:8080/HelloWorld/index.jsp 这样的形式，省略掉webapps。
