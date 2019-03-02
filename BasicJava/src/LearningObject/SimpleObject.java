@@ -1,3 +1,4 @@
+package LearningObject;
 
 public class SimpleObject{
    int int_variable;
