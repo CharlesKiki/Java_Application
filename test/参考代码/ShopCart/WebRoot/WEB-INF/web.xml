@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" 
+	xmlns="http://java.sun.com/xml/ns/javaee" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+  <servlet>
+    <servlet-name>InitServlet</servlet-name>
+    <servlet-class>com.bookstore.servlet.InitServlet</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet>
+    <servlet-name>NewOrderServlet</servlet-name>
+    <servlet-class>com.bookstore.servlet.NewOrderServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowBooksServlet</servlet-name>
+    <servlet-class>com.bookstore.servlet.ShowBooksServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <servlet-class>com.bookstore.servlet.ShowCartServlet</servlet-class>
+  </servlet>
+ 
+
+
+
+
+
+
+  <servlet-mapping>
+    <servlet-name>NewOrderServlet</servlet-name>
+    <url-pattern>/servlet/NewOrderServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowBooksServlet</servlet-name>
+    <url-pattern>/servlet/ShowBooksServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ShowCartServlet</servlet-name>
+    <url-pattern>/servlet/ShowCartServlet</url-pattern>
+  </servlet-mapping>
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+</web-app>

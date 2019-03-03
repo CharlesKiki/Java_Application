@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowViewLayout Version="1.2">
+  <StrutsActivity path="/loginInfo.do" location="0,506" dimension="265,104" />
+  <StrutsActivity path="/loginForm.do" location="1246,204" dimension="314,104" />
+  <StrutsActivity path="/login.do" location="831,204" dimension="281,104" />
+  <StrutsActivity path="/registerOne.do" location="187,0" dimension="298,104" />
+  <StrutsActivity path="/registerTwo.do" location="383,204" dimension="298,104" />
+  <StrutsActivity path="/registerOk.do" location="0,808" dimension="298,104" />
+  <StrutsActivity path="/validatoremail.do" location="343,808" dimension="308,104" />
+  <StrutsActivity path="/registertwo.do" location="0,1110" dimension="304,104" />
+  <StrutsActivity path="/logout.do" location="365,506" dimension="290,104" />
+  <StrutsActivity path="/image.do" location="349,1110" dimension="287,104" />
+  <StrutsActivity path="/WEB-INF/jsp/authorize/login_info.jsp" location="188,710" dimension="265,53" />
+  <StrutsActivity path="/WEB-INF/jsp/authorize/login_form.jsp" location="1199,408" dimension="272,53" />
+  <StrutsActivity path="/WEB-INF/jsp/authorize/register_two.jsp" location="461,408" dimension="282,53" />
+  <StrutsActivity path="/WEB-INF/jsp/authorize/login_ok.jsp" location="843,408" dimension="256,53" />
+  <StrutsActivity path="/WEB-INF/jsp/authorize/register_one.jsp" location="0,229" dimension="283,53" />
+  <StrutsActivity path="/WEB-INF/jsp/authorize/register_ok.jsp" location="12,1012" dimension="274,53" />
+  <StrutsTransition id="/registerOk.do,success,/WEB-INF/jsp/authorize/register_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="149,912" />
+      <AbsolutePoint location="149,1012" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/logout.do,success,/WEB-INF/jsp/authorize/login_info.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="510,610" />
+      <AbsolutePoint location="510,660" />
+      <AbsolutePoint location="387,660" />
+      <AbsolutePoint location="387,710" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/registerOne.do,success,/WEB-INF/jsp/authorize/register_one.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="262,104" />
+      <AbsolutePoint location="262,154" />
+      <AbsolutePoint location="141,154" />
+      <AbsolutePoint location="141,229" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginForm.do,success,/WEB-INF/jsp/authorize/login_form.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1403,308" />
+      <AbsolutePoint location="1403,408" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/loginInfo.do,success,/WEB-INF/jsp/authorize/login_info.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="132,610" />
+      <AbsolutePoint location="132,660" />
+      <AbsolutePoint location="255,660" />
+      <AbsolutePoint location="255,710" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/registerOne.do,null,/registerTwo.do,2" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="411,104" />
+      <AbsolutePoint location="411,154" />
+      <AbsolutePoint location="532,154" />
+      <AbsolutePoint location="532,204" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/registerTwo.do,success,/WEB-INF/jsp/authorize/register_two.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="532,308" />
+      <AbsolutePoint location="532,408" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,success,/WEB-INF/jsp/authorize/login_ok.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="971,308" />
+      <AbsolutePoint location="971,408" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,validateCode,/WEB-INF/jsp/authorize/register_two.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="877,308" />
+      <AbsolutePoint location="877,358" />
+      <AbsolutePoint location="673,358" />
+      <AbsolutePoint location="673,408" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+  <StrutsTransition id="/login.do,fail,/WEB-INF/jsp/authorize/login_form.jsp,1" routingType="0">
+    <AutomaticBendpoints>
+      <AbsolutePoint location="1065,308" />
+      <AbsolutePoint location="1065,358" />
+      <AbsolutePoint location="1267,358" />
+      <AbsolutePoint location="1267,408" />
+    </AutomaticBendpoints>
+  </StrutsTransition>
+</FlowViewLayout>
+

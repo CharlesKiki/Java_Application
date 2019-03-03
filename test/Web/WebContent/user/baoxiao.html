@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>报销</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<link rel="stylesheet" type="text/css" href="../css/custom.css" />
+<style>
+td {
+	border: solid #ebebeb;
+	border-width: 1px;
+	padding: 10px 0px;
+}
+</style>
+</head>
+
+<body>
+	<div class="container-all">
+
+		<div class="head">
+			<div class="exit  fr">
+				<a href="../login.html" target="_top"><h4>退出登录</h4></a>
+			</div>
+			<div class="user  fr ">
+				<h4>当前用户：XXX</h4>
+			</div>
+		</div>
+		<div class="context">
+			<div id="insurance">
+				<div id="rootwizard">
+					<div class="baoxiao_menu">
+						<ul class="fl">
+							<li><a href="#tab1" data-toggle="tab"><span
+									class="label">1</span>个人信息</a></li>
+							<li><a href="#tab2" data-toggle="tab"><span
+									class="label">2</span>就诊信息</a></li>
+							<li><a href="#tab3" data-toggle="tab"><span
+									class="label">3</span>处方明细</a></li>
+							<li><a href="#tab4" data-toggle="tab"><span
+									class="label">4</span>预结算</a></li>
+							<li><a href="#tab5" data-toggle="tab"><span
+									class="label">5</span>结算清单</a></li>
+						</ul>
+						<a href="user.html"><button type="submit"
+								class="btn btn-primary mybutton fr"
+								style="margin-right: 10px; height: 40px;">回到首页</button></a>
+					</div>
+
+					<div class="tab-content">
+						<div class="tab-pane" id="tab1">
+							<div class="search_info">
+								<div class="container">
+									<div class="row"></div>
+									<div class="row"></div>
+									<form class="form-horizontal" role="form">
+										<div class="form-group">
+											<div class="col-md-2 col-md-offset-2"
+												style="padding-right: 0;">
+												<label class="control-label fr" style="padding-top: 3px;">医保卡号：</label>
+											</div>
+											<div class="col-md-4" style="padding-left: 0;">
+												<input type="text" class="form-control" id="inputName"
+													placeholder="请输入医保卡号">
+											</div>
+
+										</div>
+										<div class="form-group">
+											<div class="col-md-2 col-md-offset-2"
+												style="padding-right: 0;">
+												<label class="control-label fr" style="padding-top: 3px;">姓名：</label>
+											</div>
+											<div class="col-md-4" style="padding-left: 0;">
+												<input type="text" class="form-control" id="inputName"
+													placeholder="显示人员姓名">
+											</div>
+
+										</div>
+										<div class="form-group">
+											<div class="col-md-offset-4 col-md-4">
+												<button type="button" class="btn btn-default fr next"
+													data-toggle="modal" data-target="#check">确认</button>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="modal fade" id="check" tabindex="-1" role="dialog">
+								<div class="modal-dialog" role="document">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal">
+												<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+											</button>
+											<h3 class="modal-title table-title">个人基本信息</h3>
+										</div>
+										<div class="modal-body">
+											<table
+												class="table table-condensed table-bordered table-hover">
+												<tbody style="column-count: 8;">
+													<tr>
+														<td colspan="2"><Label>姓名</Label></td>
+														<td colspan="2">张三</td>
+														<td colspan="2"><Label>性别</Label></td>
+														<td colspan="2">男</td>
+													</tr>
+													<tr>
+														<td colspan="2"><Label>医疗人员类别</Label></td>
+														<td colspan="6">新农村合作医疗保险</td>
+
+													</tr>
+													<tr>
+														<td colspan="2"><Label>身份证号</Label></td>
+														<td colspan="2">220172198011103456</td>
+														<td colspan="2"><Label>出生日期</Label></td>
+														<td colspan="2">1980-11-10</td>
+													</tr>
+													<tr>
+														<td colspan="2"><Label>单位名称</Label></td>
+														<td colspan="2">大连理工大学</td>
+														<td colspan="2"><Label>单位编号</Label></td>
+														<td colspan="2">127894CCXV</td>
+
+													</tr>
+													<tr>
+														<td colspan="2"><Label>本年医疗费用累计</Label></td>
+														<td colspan="2">234756元</td>
+														<td colspan="2"><Label>本年个人自费累计</Label></td>
+														<td colspan="2">127894元</td>
+													</tr>
+													<tr>
+														<td colspan="6"><Label
+															style="float: right; margin-right: 4%; background: #a8dbff;">本年中心报销累计</Label>
+														</td>
+														<td colspan="2">127894元</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+										<div class="modal-footer">
+											<button type="button" class="btn btn-default"
+												data-dismiss="modal">关闭</button>
+
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="tab-pane" id="tab2">
+							<div class="search_info">
+								<div class="row"></div>
+								<div class="row">
+									<h3 class="text-center">录入个人就诊信息</h3>
+								</div>
+								<form role="form">
+									<div class="form-group">
+										<div class="container">
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">医疗机构编号：</label> <input type="text"
+													class="col-md-3 " placeholder="医疗机构编号" />
+												<div class="col-md-2"></div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">医疗机构名称：</label> <input type="text"
+													class="col-md-3 " placeholder="医疗机构名称" />
+												<div class="col-md-2"></div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">医疗类别：</label> <select
+													class="col-md-3" style="height: 27px;">
+													<option selected>住院报销</option>
+													<option>门诊报销</option>
+												</select>
+												<div class="col-md-2"></div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">病种编码：</label> <input type="text"
+													class="col-md-3" placeholder="病种编码" />
+												<div class="col-md-2"></div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">病种名称：</label> <input type="text"
+													class="col-md-3" placeholder="病种名称" />
+												<div class="col-md-2"></div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">入院日期：</label>
+												<div class="col-md-3">
+													<input type="date" style="margin-left: -15px;" />
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">出院日期：</label>
+												<div class="col-md-3">
+													<input type="date" style="margin-left: -15px;" />
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">出院原因：</label> <select
+													class="col-md-3" style="height: 27px;">
+													<option selected>病愈</option>
+													<option>转院</option>
+													<option>弃疗</option>
+													<option>其他</option>
+												</select>
+												<div class="col-md-2"></div>
+											</div>
+											<div class="row">
+												<div class="col-md-1"></div>
+												<label class="col-md-3">住院号(门诊号)：</label> <input type="text"
+													class="col-md-3" placeholder="住院号" />
+												<div class="col-md-5" style="margin-top: 5px;">
+													<strong style="color: red; margin-left: 20px;">***重要条目，请谨慎校对后再保存</strong>
+												</div>
+											</div>
+											<div class="row">
+												<div class="col-md-5"></div>
+												<div class="col-md-3">
+													<button type="button" class="btn btn-default next"
+														onclick=alert("信息确认无误后，请点击下一步！")>确认信息</button>
+												</div>
+											</div>
+										</div>
+									</div>
+								</form>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab3">
+							<div class="add_info">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3>录入处方单</h3>
+									</div>
+									<div class="panel-body">
+										<div class="result">
+											<table
+												class="table table-condensed table-bordered table-hover result_table_info">
+												<thead>
+													<tr>
+														<th>收费项目类别</th>
+														<th>编号</th>
+														<th>名称</th>
+														<th>单价</th>
+														<th>数量</th>
+														<th>操作</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<td>药品</td>
+														<td>15348675</td>
+														<td>白加黑</td>
+														<td>20.00</td>
+														<td>5</td>
+														<td><img src="../img/icn_edit.png" /> <img
+															src="../img/icn_trash.png" / onclick=confirm("确定要删除吗？")>
+														</td>
+													</tr>
+													<tr>
+														<td>诊疗项目</td>
+														<td>5534143</td>
+														<td>X光</td>
+														<td>10.00</td>
+														<td>2</td>
+														<td><img src="../img/icn_edit.png" /> <img
+															src="../img/icn_trash.png" / onclick=confirm("确定要删除吗？")>
+														</td>
+													</tr>
+													<tr>
+														<td>服务设施</td>
+														<td>4153686</td>
+														<td>床位费</td>
+														<td>100.00</td>
+														<td>5</td>
+														<td><img src="../img/icn_edit.png" /> <img
+															src="../img/icn_trash.png" / onclick=confirm("确定要删除吗？")>
+														</td>
+													</tr>
+													<tr>
+														<td>药品</td>
+														<td>15348675</td>
+														<td>白加黑</td>
+														<td>20.00</td>
+														<td>5</td>
+														<td><img src="../img/icn_edit.png" /> <img
+															src="../img/icn_trash.png" / onclick=confirm("确定要删除吗？")>
+														</td>
+													</tr>
+												</tbody>
+											</table>
+											<button type="button" class="btn btn-primary fr"
+												style="margin: 10px auto;" data-toggle="modal"
+												data-target=".bs-example-modal-lg">继续添加</button>
+										</div>
+									</div>
+								</div>
+								<div class="modal fade bs-example-modal-lg"
+									data-backdrop="static" data-keyboard="false" tabindex="-1"
+									role="dialog" aria-labelledby="myLargeModalLabel"
+									aria-hidden="true">
+									<div class="modal-dialog modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<button type="button" class="close" data-dismiss="modal">
+													<span aria-hidden="true">&times;</span><span
+														class="sr-only">Close</span>
+												</button>
+												<h3 class="modal-title table-title">录入处方单明细</h3>
+											</div>
+											<div class="modal-body">
+												<form role="form">
+													<div class="form-group">
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">住院号(门诊号)：</label> <input
+																type="text" class="col-md-2" placeholder="已有无需填写" />
+															<!-- 报销针对的是一次住院/就诊，所以每张处方此信息相同，从个人就诊信息中获取 -->
+															<div class="col-md-2"></div>
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">收费项目类别：</label> <select
+																class="col-md-2" style="height: 27px;">
+																<option selected>药品</option>
+																<option>诊疗项目</option>
+																<option>服务设施</option>
+															</select>
+															<div class="col-md-2"></div>
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">名称：</label> <input type="text"
+																class="col-md-3" placeholder="名称" />
+															<div class="col-md-2"></div>
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">编号：</label> <input type="text"
+																class="col-md-3" placeholder="编号" />
+															<div class="col-md-2"></div>
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">单价：</label> <input type="text"
+																class="col-md-3" placeholder="单价" />
+															<div class="col-md-2"></div>
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">数量：</label> <input type="text"
+																class="col-md-3" placeholder="数量" />
+															<div class="col-md-2"></div>
+														</div>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn btn-default"
+													data-dismiss="modal">关闭</button>
+												<button type="button" class="btn btn-primary"
+													data-dismiss="modal">保存</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="tab-pane" id="tab4">
+							<div class="add_info">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3>处方单明细</h3>
+									</div>
+									<div class="panel-body">
+										<div class="result">
+											<table
+												class="table table-condensed table-bordered table-hover result_table_info">
+												<thead>
+													<tr>
+														<th>收费项目等级</th>
+														<th>收费项目类别</th>
+														<th>编号</th>
+														<th>名称</th>
+														<th>单价</th>
+														<th>数量</th>
+														<th>总额</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr>
+														<th>甲</th>
+														<td>药品</td>
+														<td>15348675</td>
+														<td>白加黑</td>
+														<td>20.00</td>
+														<td>5</td>
+														<td>100.00</td>
+													</tr>
+													<tr>
+														<th>乙</th>
+														<td>诊疗项目</td>
+														<td>5534143</td>
+														<td>X光</td>
+														<td>10.00</td>
+														<td>2</td>
+														<td>20.00</td>
+													</tr>
+													<tr>
+														<th>丙</th>
+														<td>服务设施</td>
+														<td>4153686</td>
+														<td>床位费</td>
+														<td>100.00</td>
+														<td>5</td>
+														<td>500.00</td>
+													</tr>
+													<tr>
+														<th>甲</th>
+														<td>药品</td>
+														<td>15348675</td>
+														<td>白加黑</td>
+														<td>20.00</td>
+														<td>5</td>
+														<td>100.00</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h3>费用明细</h3>
+									</div>
+									<div class="panel-body">
+										<div class="result">
+											<table
+												class="table table-bordered table-hover table-condensed">
+												<thead class="text-center">
+													<tr>
+														<th>费用总额</th>
+														<th>报销金额</th>
+														<th>自费金额</th>
+														<th>累计报销金额</th>
+														<th>封顶线</th>
+														<th>起付标准</th>
+														<th>分段自费金额</th>
+														<th>乙类自费金额</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr class="success">
+														<th>720.00</th>
+														<th>408.00</th>
+														<th>312.00</th>
+														<th>3000.00</th>
+														<th>500000.00</th>
+														<th>100.00</th>
+														<th>202.00</th>
+														<th>10.00</th>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tab-pane" id="tab5">
+							<div
+								style="width: 1000px; height: 500px; overflow: auto; margin: auto; padding-top: 10px;">
+								<div style="height: 1000px; width: 900px; margin: auto">
+									<div class="panel panel-default">
+										<div class="panel-heading">
+											<h3 style="text-align: center">市基本医疗保险报销</h3>
+											<h3 style="text-align: center">医疗费用结算清单</h3>
+										</div>
+										<table class="table table-condensed">
+											<tbody style="column-count: 8;">
+												<tr>
+													<td colspan="8"><label style="float: right">日</label>
+														<label style="float: right">25</label> <label
+														style="float: right">月</label> <label style="float: right">04</label>
+														<label style="float: right">年</label> <label
+														style="float: right">2016</label> <Label
+														style="float: right">结算日期：</Label></td>
+												</tr>
+											</tbody>
+											<tbody style="column-count: 8;">
+												<tr>
+													<td colspan="2"><Label>单位名称</Label></td>
+													<td colspan="2">大连理工大学</td>
+													<td colspan="2"><Label>单位编号</Label></td>
+													<td colspan="2">1166238</td>
+												</tr>
+												<tr>
+													<td colspan="1"><Label>姓名</Label></td>
+													<td colspan="1">张三</td>
+													<td colspan="1"><Label>个人编号</Label></td>
+													<td colspan="1">1166238</td>
+													<td colspan="2"><Label>医疗人员类别</Label></td>
+													<td colspan="2">新农村合作医疗保险</td>
+												</tr>
+												<tr>
+													<td colspan="2"><Label>报销类别</Label></td>
+													<td colspan="2">甲类</td>
+													<td colspan="2"><Label>报销编号</Label></td>
+													<td colspan="2">123455667898</td>
+												</tr>
+												<tr>
+													<td colspan="2"><Label>就诊医院</Label></td>
+													<td colspan="2">大连市开发区医院</td>
+													<td colspan="2"><Label>就诊时段</Label></td>
+													<td colspan="2">2016-03-18</td>
+												</tr>
+												<tr>
+													<td colspan="8"><Label>结算明细：</Label></td>
+												</tr>
+												<tr>
+													<td colspan="8">
+														<div style="margin-left: 40px;">
+															<Label>起付标准：</Label> <Label>200</Label> <Label>元</Label>
+														</div>
+														<ul>
+															<Label>甲类项目：</Label>
+															<table class="table table-condensed" style="margin: 0;">
+																<tr>
+																	<td colspan="1"><Label>项目等级</Label></td>
+																	<td colspan="1"><label>项目类别</label></td>
+																	<td colspan="1"><Label>编号</Label></td>
+																	<td colspan="2"><Label>名称</Label></td>
+																	<td colspan="1"><Label>单价</Label></td>
+																	<td colspan="1"><label>数量</label></td>
+																	<td colspan="1"><Label>总额</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>甲类</Label></td>
+																	<td colspan="1"><label>药品</label></td>
+																	<td colspan="1"><Label>20160425</Label></td>
+																	<td colspan="2"><Label>青霉素</Label></td>
+																	<td colspan="1"><Label>20.00</Label></td>
+																	<td colspan="1"><label>4</label></td>
+																	<td colspan="1"><Label>80.00</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>甲类</Label></td>
+																	<td colspan="1"><label>药品</label></td>
+																	<td colspan="1"><Label>20160423</Label></td>
+																	<td colspan="2"><Label>葡萄糖注射液</Label></td>
+																	<td colspan="1"><Label>15.00</Label></td>
+																	<td colspan="1"><label>2</label></td>
+																	<td colspan="1"><Label>30.00</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>甲类</Label></td>
+																	<td colspan="1"><label>药品</label></td>
+																	<td colspan="1"><Label>15368675</Label></td>
+																	<td colspan="2"><Label>白加黑</Label></td>
+																	<td colspan="1"><Label>20.00</Label></td>
+																	<td colspan="1"><label>5</label></td>
+																	<td colspan="1"><Label>100.00</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>甲类</Label></td>
+																	<td colspan="1"><label>诊疗项目</label></td>
+																	<td colspan="1"><Label>5534143</Label></td>
+																	<td colspan="2"><Label>X光</Label></td>
+																	<td colspan="1"><Label>200.00</Label></td>
+																	<td colspan="1"><label>1</label></td>
+																	<td colspan="1"><Label>200.00</Label></td>
+																</tr>
+															</table>
+														</ul>
+														<ul>
+															<Label>乙类项目：</Label>
+															<table class="table table-condensed" style="margin: 0;">
+																<tr>
+																	<td colspan="1"><Label>项目等级</Label></td>
+																	<td colspan="1"><label>项目类别</label></td>
+																	<td colspan="1"><Label>编号</Label></td>
+																	<td colspan="2"><Label>名称</Label></td>
+																	<td colspan="1"><Label>单价</Label></td>
+																	<td colspan="1"><label>数量</label></td>
+																	<td colspan="1"><Label>总额</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>乙类</Label></td>
+																	<td colspan="1"><label>药品</label></td>
+																	<td colspan="1"><Label>20160434</Label></td>
+																	<td colspan="2"><Label>罗红霉素</Label></td>
+																	<td colspan="1"><Label>20.00</Label></td>
+																	<td colspan="1"><label>2</label></td>
+																	<td colspan="1"><Label>40.00</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>乙类</Label></td>
+																	<td colspan="1"><label>诊疗项目</label></td>
+																	<td colspan="1"><Label>5534007</Label></td>
+																	<td colspan="2"><Label>B超</Label></td>
+																	<td colspan="1"><Label>70.00</Label></td>
+																	<td colspan="1"><label>1</label></td>
+																	<td colspan="1"><Label>70.00</Label></td>
+																</tr>
+															</table>
+
+														</ul>
+														<ul>
+															<Label>自费项目：</Label>
+															<table class="table table-condensed" style="margin: 0;">
+																<tr>
+																	<td colspan="1"><Label>项目等级</Label></td>
+																	<td colspan="1"><label>项目类别</label></td>
+																	<td colspan="1"><Label>编号</Label></td>
+																	<td colspan="2"><Label>名称</Label></td>
+																	<td colspan="1"><Label>单价</Label></td>
+																	<td colspan="1"><label>数量</label></td>
+																	<td colspan="1"><Label>总额</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>丙类</Label></td>
+																	<td colspan="1"><label>药品</label></td>
+																	<td colspan="1"><Label>20160434</Label></td>
+																	<td colspan="2"><Label>感康</Label></td>
+																	<td colspan="1"><Label>15.00</Label></td>
+																	<td colspan="1"><label>1</label></td>
+																	<td colspan="1"><Label>15.00</Label></td>
+																</tr>
+																<tr>
+																	<td colspan="1"><Label>丙类</Label></td>
+																	<td colspan="1"><label>诊疗项目</label></td>
+																	<td colspan="1"><Label>20160334</Label></td>
+																	<td colspan="2"><Label>CT</Label></td>
+																	<td colspan="1"><Label>300.00</Label></td>
+																	<td colspan="1"><label>1</label></td>
+																	<td colspan="1"><Label>300.00</Label></td>
+																</tr>
+															</table>
+														</ul> <!-- <hr style="height:1px;border:none;border-top:1px solid #555555;">-->
+													</td>
+												</tr>
+												<tr>
+													<td colspan="2"><Label>个人自费费用</Label></td>
+													<td colspan="2"><em>315.00</em> <Label>元</Label></td>
+													<td colspan="2"><Label>中心报销金额：</Label></td>
+													<td colspan="2"><em>350.00</em> <Label>元</Label></td>
+												</tr>
+												<tr>
+													<td colspan="2" rowspan="2"><Label
+														style="margin-top: 30px;">拨付金额</Label></td>
+													<td colspan="6" rowspan="2">
+														<table class="table table-condensed" frame="void"
+															style="margin: 0;">
+															<tr>
+																<td width="8%"><label>大写：</label></td>
+																<td><Label>零</Label></td>
+																<td><Label>万</Label></td>
+																<td><Label>零</Label></td>
+																<td><Label>仟</Label></td>
+																<td><Label>四</Label></td>
+																<td><Label>佰</Label></td>
+																<td><Label>八</Label></td>
+																<td><Label>拾</Label></td>
+																<td><Label>五</Label></td>
+																<td><Label>元</Label></td>
+																<td><Label>零</Label></td>
+																<td><Label>角</Label></td>
+																<td><Label>零</Label></td>
+																<td><Label>分</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><label>小写：</label></td>
+																<td colspan="2"><em>485.00</em></td>
+																<td colspan="2"><Label>元</Label></td>
+																<td colspan="10"></td>
+															</tr>
+														</table>
+													</td>
+												</tr>
+											</tbody>
+											<tbody style="column-count: 8;">
+												<tr>
+													<td colspan="8"><br>
+														本表一式三联，财务科、结算科、参保人各一联。本表一式三联，财务科、结算科、参保人各一联。</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</div>
+
+							</div>
+							<script>
+									document.getElementById("save").onclick = function() {
+										document.getElementById("no").innerHTML = "123234";
+										document.getElementsByName("ad")[0].display = null;
+									}
+								</script>
+						</div>
+
+						<ul class="pager wizard">
+							<li class="previous first" style="display: none;"><a
+								href="#">第一步</a></li>
+							<li class="previous"><a href="#" style="margin-left: 100px;">上一步</a></li>
+							<li class="next last" style="display: none;"><a href="#">最后一步</a></li>
+							<li class="next"><a href="#" style="margin-right: 100px;">下一步</a></li>
+						</ul>
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot "></div>
+
+	</div>
+	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/jquery.bootstrap.wizard.min.js"
+		type="text/javascript" charset="utf-8"></script>
+
+	<script type="text/javascript">
+			$(document).ready(function() {
+				$('#rootwizard').bootstrapWizard({
+					'tabClass': 'bwizard-steps'
+				});
+			});
+		</script>
+
+</body>
+
+</html>

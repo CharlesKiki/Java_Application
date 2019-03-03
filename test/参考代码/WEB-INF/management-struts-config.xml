@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="productForm" type="com.super4.dang.form.ProductForm"></form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards >
+		<forward name="success" path="/WEB-INF/jsp/management/jiagou/success.jsp" contextRelative="true" ></forward>
+	</global-forwards>
+	<action-mappings>
+		<action path="/showindex" type="com.super4.dang.management.ShowIndexAction" parameter="showindex">
+			<forward name="success" path="/WEB-INF/jsp/management/jiagou/mainindex.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showhead" type="com.super4.dang.management.ShowIndexAction" parameter="showhead">
+			<forward name="success" path="/WEB-INF/jsp/management/jiagou/header.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showmenu" type="com.super4.dang.management.ShowIndexAction" parameter="showmenu">
+			<forward name="success" path="/WEB-INF/jsp/management/jiagou/menu.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showmain" type="com.super4.dang.management.ShowIndexAction" parameter="showmain">
+			<forward name="success" path="/WEB-INF/jsp/management/jiagou/main.jsp"
+				contextRelative="true" />
+		</action>
+		<!-- User -->
+		<action path="/showAllUser" type="com.super4.dang.management.UserInfoAction" parameter="showAllUser">
+			<forward name="success" path="/WEB-INF/jsp/management/user/alluser-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showUserInfo" type="com.super4.dang.management.UserInfoAction" parameter="showUserInfo">
+			<forward name="success" path="/WEB-INF/jsp/management/user/user-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/deleteUser" type="com.super4.dang.management.UserInfoAction" parameter="deleteUser">
+		</action>
+		<action path="/showSearch" type="com.super4.dang.management.UserInfoAction" parameter="showSearch">
+			<forward name="success" path="/WEB-INF/jsp/management/user/search-user.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/searchUser" type="com.super4.dang.management.UserInfoAction" parameter="searchUser">
+			<forward name="success" path="/WEB-INF/jsp/management/user/alluser-info.jsp"
+				contextRelative="true" />
+		</action>
+		<!-- Product -->
+		<action path="/showform1" type="com.super4.dang.management.ProductMAction" parameter="showform1">
+			<forward name="success" path="/WEB-INF/jsp/management/product/add-product-form1.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showform2" type="com.super4.dang.management.ProductMAction" parameter="showform2" name="productForm">
+			<forward name="success" path="/WEB-INF/jsp/management/product/add-product-form2.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showform3" type="com.super4.dang.management.ProductMAction" parameter="showform3" name="productForm">
+			<forward name="success" path="/WEB-INF/jsp/management/product/add-product-pic.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/addproduct" type="com.super4.dang.management.ProductMAction" parameter="addproduct">
+		</action>
+		<action path="/showAllProduct" type="com.super4.dang.management.ProductMAction" parameter="showAllProduct">
+			<forward name="success" path="/WEB-INF/jsp/management/product/allproduct.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showsearch" type="com.super4.dang.management.ProductMAction" parameter="showsearch">
+			<forward name="success" path="/WEB-INF/jsp/management/product/search-product.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/deleteProduct" type="com.super4.dang.management.ProductMAction" parameter="deleteProduct">
+		</action>
+		<action path="/JSONCategory" type="com.super4.dang.management.ProductMAction" parameter="JSONCategory">
+		</action>
+		<!-- Ordere -->
+		<action path="/showAllOrder" type="com.super4.dang.management.OrderMAction" parameter="showAllOrder">
+			<forward name="success" path="/WEB-INF/jsp/management/order/allorder-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showOrder" type="com.super4.dang.management.OrderMAction" parameter="showOrder">
+			<forward name="success" path="/WEB-INF/jsp/management/order/order-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/sureOrder" type="com.super4.dang.management.OrderMAction" parameter="sureOrder">
+		</action>
+		<action path="/searchOrderForm" type="com.super4.dang.management.OrderMAction" parameter="searchOrderForm">
+			<forward name="success" path="/WEB-INF/jsp/management/order/search-order.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/searchOrder" type="com.super4.dang.management.OrderMAction" parameter="searchOrder">
+		</action>
+	</action-mappings>
+	<message-resources parameter="ApplicationResources" />
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+			<set-property property="pathnames"
+				value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+</struts-config>
+

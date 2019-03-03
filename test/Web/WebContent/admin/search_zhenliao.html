@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>查询诊疗项目信息</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+</head>
+
+<body>
+	<div class="container-all">
+
+		<div class="head">
+			<div class="exit  fr">
+				<a href="../login.html" target="_top"><h4>退出登录</h4></a>
+			</div>
+			<div class="user  fr ">
+				<h4>当前管理员：XXX</h4>
+			</div>
+		</div>
+		<div class="context">
+			<div class="navigation col-md-2">
+				<div class="function "></div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion"
+									href="#collapseOne">个人&单位信息
+									<div class="glyphicon glyphicon-chevron-down fr"></div>
+								</a>
+							</h3>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="search_person.html" id="people_info">个人基本信息</a></li>
+									<li><a href="search_company.html" id="company_info">单位基本信息
+									</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion"
+									href="#collapseTwo">医疗项目信息
+									<div class="glyphicon glyphicon-chevron-down fr"></div>
+								</a>
+							</h3>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="search_institution.html"
+										id="institution_info">医疗机构信息</a></li>
+									<li><a href="search_facility.html" id="facility_info">服务设施信息</a></li>
+									<li><a href="search_disease.html" id="disease_info">病种信息</a></li>
+									<li><a href="search_drug.html" id="drug_info">药品信息</a></li>
+									<li><a href="search_zhenliao.html" id="zhenliao_info">诊疗项目信息
+											<div class="glyphicon glyphicon-ok fr"></div>
+									</a></li>
+									<li><a href="search_canshu.html" id="parameter_info">待遇参数信息</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a href="history.html">报销历史信息</a>
+							</h3>
+						</div>
+
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a href="log.html">查看日志</a>
+							</h3>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="information col-md-10">
+				<div id="zhenliao">
+					<div class="menu" name="subnav_zhenliao" id="subnav_zhenliao">
+						<a href="search_zhenliao.html"><button type="submit"
+								class="btn btn-primary mybutton active ">查询信息</button></a> <a
+							href="add_zhenliao.html"><button type="submit"
+								class="btn btn-primary mybutton">增加信息</button></a> <a
+							href="admin.html"><button type="submit"
+								class="btn btn-primary mybutton fr" style="margin-right: 10px;">回到首页</button></a>
+					</div>
+					<div class="menu-context" name="search_zhenliao"
+						id="search_zhenliao">
+						<div class="table-title">
+							<h3>诊疗项目信息查询</h3>
+						</div>
+						<div class="search_zhenliao">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+
+									<div class="row" style="margin-top: 10px;">
+
+										<div class="col-md-2" style="padding-right: 0;">
+											<label class="fr" style="margin-top: 7px;">查询方式：</label>
+										</div>
+										<div class="col-md-3" style="padding-left: 0;">
+											<select class="selectpicker form-control ">
+												<option selected>所有条目</option>
+												<option>诊疗项目编号</option>
+												<option>诊疗项目名称</option>
+												<option>收费项目等级</option>
+												<option>医院级别</option>
+											</select>
+										</div>
+										<div class="col-md-2" style="padding-right: 0;">
+											<label class="fr" style="margin-top: 7px;">输入项：</label>
+										</div>
+										<div class="col-md-5" style="padding-left: 0;">
+											<div class="input-group">
+												<input type="text" class="form-control" placeholder="查找">
+												<span class="input-group-btn">
+													<button type="submit" class="btn btn-primary fr">查找</button>
+												</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="panel-body">
+									<div class="result">
+
+										<table
+											class="table table-condensed table-bordered table-hover result_table_zhenliao">
+											<thead>
+												<tr>
+													<th><input id="checkall" type="checkbox">
+														<button class="btn btn-danger btn-xs">删除</button></th>
+													<th>操作</th>
+													<th>诊疗项目编号</th>
+													<th>诊疗项目名称</th>
+													<th>收费项目等级</th>
+													<th>医院等级</th>
+													<th>是否需要审批标志</th>
+													<th>单位</th>
+													<th>生产厂家</th>
+													<th>限制适用范围</th>
+													<th>备注</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td><input type="image" src="../img/icn_edit.png"
+														title="Edit" data-toggle="modal"
+														data-target=".bs-example-modal-lg"></td>
+													<td>ML2875436</td>
+													<td>B超</td>
+													<td>甲</td>
+													<td>一级医院</td>
+													<td>否</td>
+													<td>人次</td>
+													<td>东北第一制药厂</td>
+													<td>XXX</td>
+													<td>备注：无</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td><input type="image" src="../img/icn_edit.png"
+														title="Edit" data-toggle="modal"
+														data-target=".bs-example-modal-lg"></td>
+													<td>ML2875436</td>
+													<td>B超</td>
+													<td>甲</td>
+													<td>一级医院</td>
+													<td>否</td>
+													<td>人次</td>
+													<td>东北第一制药厂</td>
+													<td>XXX</td>
+													<td>备注：无</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td><input type="image" src="../img/icn_edit.png"
+														title="Edit" data-toggle="modal"
+														data-target=".bs-example-modal-lg"></td>
+													<td>ML2875436</td>
+													<td>B超</td>
+													<td>甲</td>
+													<td>一级医院</td>
+													<td>否</td>
+													<td>人次</td>
+													<td>东北第一制药厂</td>
+													<td>XXX</td>
+													<td>备注：无</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td><input type="image" src="../img/icn_edit.png"
+														title="Edit" data-toggle="modal"
+														data-target=".bs-example-modal-lg"></td>
+													<td>ML2875436</td>
+													<td>B超</td>
+													<td>甲</td>
+													<td>一级医院</td>
+													<td>否</td>
+													<td>人次</td>
+													<td>东北第一制药厂</td>
+													<td>XXX</td>
+													<td>备注：无</td>
+												</tr>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td><input type="image" src="../img/icn_edit.png"
+														title="Edit" data-toggle="modal"
+														data-target=".bs-example-modal-lg"></td>
+													<td>ML2875436</td>
+													<td>B超</td>
+													<td>甲</td>
+													<td>一级医院</td>
+													<td>否</td>
+													<td>人次</td>
+													<td>东北第一制药厂</td>
+													<td>XXX</td>
+													<td>备注：无</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+
+									<nav style="text-align: center;">
+										<ul class="pagination pagination-sm" style="margin-bottom: 0;">
+											<li class="disabled"><a href="#" aria-label="Previous"><span
+													aria-hidden="true">&laquo;</span></a></li>
+											<li class="active"><a href="#">1 <span
+													class="sr-only">(current)</span></a></li>
+											<li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">4 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">5<span class="sr-only">(current)</span></a></li>
+											<li><a href="#" aria-label="Next"><span
+													aria-hidden="true">&raquo;</span></a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade bs-example-modal-lg" data-backdrop="static"
+						data-keyboard="false" tabindex="-1" role="dialog"
+						aria-labelledby="myLargeModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">
+										<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+									</button>
+									<h3 class="modal-title table-title">修改诊疗项目信息</h3>
+								</div>
+								<div class="modal-body">
+									<div class="add_zhenliao">
+										<div class="row"></div>
+										<div class="row"></div>
+										<form role="form">
+											<div class="form-group">
+												<div class="container">
+													<div class="row">
+														<div class="col-md-1"></div>
+														<label class="col-md-3">项目编号：</label> <input type="text"
+															class="col-md-6" placeholder="诊疗项目编号" />
+														<div class="col-md-2"></div>
+													</div>
+													<div class="row">
+														<div class="col-md-1"></div>
+														<label class="col-md-3">项目名称：</label> <input type="text"
+															class="col-md-6" placeholder="诊疗项目名称" />
+													</div>
+
+													<div class="row">
+														<div class="col-md-1"></div>
+														<label class="col-md-3">收费类别：</label> <label>诊疗项目</label>
+													</div>
+													<div class="row">
+														<div class="col-md-1"></div>
+														<label class="col-md-3">是否需要审批标致：</label>
+														<div class="col-md-2">
+															<div class="form-group" style="margin-bottom: 0;">
+																<label class="radio-inline "><input type="radio"
+																	value="option1" name="1">是</label> <label
+																	class="radio-inline " style="margin-top: 5px;"><input
+																	type="radio" value="option2" name="1">否</label>
+															</div>
+														</div>
+														<div class="row"></div>
+
+														<div class="row">
+															<div class="col-md-2"></div>
+															<label class="col-md-2">项目等级：</label>
+															<div class="col-md-2">
+																<select style="margin-top: 5px;">
+																	<option>甲</option>
+																	<option>乙</option>
+																	<option>丙</option>
+																</select>
+															</div>
+															<label class="col-md-2">医院级别：</label>
+															<div class="col-md-1">
+																<select style="margin-top: 5px;">
+																	<option>全部医院</option>
+																	<option>一级医院</option>
+																	<option>二级医院</option>
+																	<option>三级医院</option>
+																	<option>社区医院</option>
+																</select>
+															</div>
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">生产厂家：</label> <input type="text"
+																class="col-md-6" placeholder="生产厂家" />
+														</div>
+
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">单位信息：</label> <input type="text"
+																class="col-md-6" placeholder="单位" />
+														</div>
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">限制使用范围：</label> <input
+																type="text" class="col-md-6" placeholder="使用范围" />
+														</div>
+
+														<div class="row">
+															<div class="col-md-1"></div>
+															<label class="col-md-3">备注：</label> <input type="text"
+																class="col-md-6" placeholder="备注信息" />
+														</div>
+
+													</div>
+												</div>
+											</div>
+										</form>
+									</div>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">关闭</button>
+									<button type="button" class="btn btn-primary"
+										data-dismiss="modal">保存</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<div class="foot "></div>
+	</div>
+
+	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

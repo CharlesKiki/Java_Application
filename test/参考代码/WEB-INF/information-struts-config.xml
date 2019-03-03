@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans>
+		<form-bean name="addForm" type="com.super4.dang.form.OrderForm"></form-bean>
+	</form-beans>
+	<global-exceptions />
+	<global-forwards >
+		<forward name="success" path="/WEB-INF/jsp/information/success.jsp" contextRelative="true"></forward>
+	</global-forwards>
+	<action-mappings>
+		<action path="/success" type="org.apache.struts.actions.ForwardAction" parameter="/WEB-INF/jsp/information/success.jsp"></action>
+		<action path="/information" type="com.super4.dang.action.InformationAction" parameter="information">
+			<forward name="success" path="/WEB-INF/jsp/information/user-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/showInfo" type="com.super4.dang.action.InformationAction" parameter="showInfo">
+			<forward name="success" path="/WEB-INF/jsp/information/user-info-form.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/changeInfo" type="com.super4.dang.action.InformationAction" parameter="changeInfo">
+			<forward name="success" path="/WEB-INF/jsp/information/user-info-form.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/order" type="com.super4.dang.action.InformationAction" parameter="order">
+			<forward name="success" path="/WEB-INF/jsp/information/order-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/address" type="com.super4.dang.action.InformationAction" parameter="address">
+			<forward name="success" path="/WEB-INF/jsp/information/address-info.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/changeAddressform" type="com.super4.dang.action.InformationAction" parameter="changeAddressform">
+			<forward name="success" path="/WEB-INF/jsp/information/address-form.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/changeAddress" type="com.super4.dang.action.InformationAction" parameter="changeAddress" name="addForm">
+		</action>
+		<action path="/changeOrderSendWayform" type="com.super4.dang.action.InformationAction" parameter="changeOrderSendWayform">
+			<forward name="success" path="/WEB-INF/jsp/information/sendWay-form.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/changeOrderSendWayform2" type="com.super4.dang.action.InformationAction" parameter="changeOrderSendWayform2">
+			<forward name="success" path="/WEB-INF/jsp/information/sendWay-form.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/changeOrderSendWay" type="com.super4.dang.action.InformationAction" parameter="changeOrderSendWay">
+			<forward name="success" path="/WEB-INF/jsp/information/sendWay-form.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/changeOrderInfoform" type="com.super4.dang.action.InformationAction" parameter="changeOrderInfoform">
+			<forward name="success" path="/WEB-INF/jsp/information/order-info-form.jsp"
+				contextRelative="true" />
+		</action>
+		
+		<action path="/changeOrderInfo" type="com.super4.dang.action.InformationAction" parameter="changeOrderInfo">
+			<forward name="success" path="/WEB-INF/jsp/information/order-info-form.jsp"
+				contextRelative="true" />
+		</action>
+	</action-mappings>
+	<controller processorClass="com.super4.dang.controller.ShoppingController"></controller>
+	<message-resources parameter="ApplicationResources" />
+	<plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+			<set-property property="pathnames"
+				value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml" />
+	</plug-in>
+</struts-config>
+

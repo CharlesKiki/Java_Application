@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<data-sources />
+	<form-beans />
+	<global-exceptions />
+	<global-forwards />
+	<action-mappings>
+		<action path="/allCategory" type="com.super4.dang.action.AllCategory">
+			<forward name="success" path="/WEB-INF/jsp/catalog/all_category.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/main" type="com.super4.dang.action.Main">
+			<forward name="success" path="/WEB-INF/jsp/catalog/main.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/recommend" type="com.super4.dang.action.Recommend">
+			<forward name="success" path="/WEB-INF/jsp/catalog/recommend.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/tejia" type="com.super4.dang.action.TeJia">
+			<forward name="success" path="/WEB-INF/jsp/catalog/tejia.jsp"
+				contextRelative="true" />
+			<forward name="more" path="/WEB-INF/jsp/catalog/more_book.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/new" type="com.super4.dang.action.New">
+			<forward name="success" path="/WEB-INF/jsp/catalog/new.jsp"
+				contextRelative="true" />
+			<forward name="more" path="/WEB-INF/jsp/catalog/more_book.jsp"
+					contextRelative="true" />
+		</action>
+		<action path="/list" type="com.super4.dang.action.List">
+			<forward name="success" path="/WEB-INF/jsp/catalog/list.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/category" type="com.super4.dang.action.CategoryAction">
+			<forward name="success" path="/WEB-INF/jsp/catalog/category.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/bookList" type="com.super4.dang.action.BookList">
+			<forward name="success" path="/WEB-INF/jsp/catalog/book_list.jsp"
+				contextRelative="true" />
+		</action>
+		<action path="/detail" type="com.super4.dang.action.BookDetailAction" parameter="detail">
+			<forward name="success" path="/WEB-INF/jsp/catalog/book_detail.jsp"
+				contextRelative="true"/>
+		</action>
+		<action path="/c_form" type="com.super4.dang.action.BookDetailAction" parameter="c_form">
+			<forward name="success" path="/WEB-INF/jsp/catalog/comment_form.jsp"
+				contextRelative="true"/>
+		</action>
+		<action path="/pingFen" type="com.super4.dang.action.BookDetailAction" parameter="pingFen"></action>
+		<action path="/newcomment" type="com.super4.dang.action.CommentAction" parameter="newcomment"/>
+		<action path="/newreply" type="com.super4.dang.action.CommentAction" parameter="newreply"/>
+	</action-mappings>
+	<message-resources parameter="ApplicationResources" />
+</struts-config>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>查询报销历史</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+</head>
+
+<body>
+	<div class="container-all">
+
+		<div class="head">
+			<div class="exit  fr">
+				<a href="../login.html" target="_top"><h4>退出登录</h4></a>
+			</div>
+			<div class="user  fr ">
+				<h4>当前用户：XXX</h4>
+			</div>
+		</div>
+		<div class="context">
+			<div class="navigation col-md-2">
+				<div class="function "></div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion"
+									href="#collapseOne">信息查询
+									<div class="glyphicon glyphicon-chevron-down fr"></div>
+								</a>
+							</h3>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="search_person.html" id="people_info">个人基本信息</a></li>
+									<li><a href="search_history.html" id="parameter_info">报销历史信息
+											<div class="glyphicon glyphicon-ok fr"></div>
+									</a></li>
+									<li><a href="search_company.html" id="company_info">单位基本信息</a></li>
+									<li><a href="search_institution.html"
+										id="institution_info">医疗机构信息</a></li>
+									<li><a href="search_facility.html" id="facility_info">服务设施信息</a></li>
+									<li><a href="search_disease.html" id="disease_info">病种信息</a></li>
+									<li><a href="search_drug.html" id="drug_info">药品信息</a></li>
+									<li><a href="search_zhenliao.html" id="zhenliao_info">诊疗项目信息</a></li>
+									<li><a href="search_canshu.html" id="parameter_info">待遇参数信息</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="information col-md-10">
+				<div id="history">
+					<div class="menu" name="subnav_history" id="subnav_history">
+						<a href="search_company.html"><button type="submit"
+								class="btn btn-primary mybutton active">查询信息</button></a> <a
+							href="user.html"><button type="submit"
+								class="btn btn-primary mybutton fr" style="margin-right: 10px;">回到首页</button></a>
+					</div>
+					<div class="menu-context" name="search_history" id="search_history">
+						<div class="table-title">
+							<h3>报销历史信息查询</h3>
+						</div>
+						<div class="search_history">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="row" style="margin-top: 10px;">
+										<div class="col-md-4">
+											<div class="row">
+												<div class="col-md-1"></div>
+												<div class="col-md-4"
+													style="padding: 0; margin-right: -20px;">
+													<label>查询方式：</label>
+												</div>
+												<div class="col-md-6" style="padding: 0; margin: 0;">
+													<select id="basic2" class=" show-tick form-control"
+														style="padding: 0; margin: 0;" onchange=change(this.value)>
+														<!-- <option class="get-class" disabled>英语</option>-->
+														<option selected value="alllist">所有条目</option>
+														<option value="id">编号</option>
+														<option value="name">姓名</option>
+													</select>
+
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row">
+												<div class="col-md-4"
+													style="padding: 0; margin-left: -20px; margin-right: -20px;">
+													<label>起始时间：</label>
+												</div>
+												<div class="col-md-8" style="padding: 0; margin: 0;">
+													<input type="date" class="form-control">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row">
+												<div class="col-md-4"
+													style="padding: 0; margin-left: -20px; margin-right: -20px;">
+													<label>结束时间：</label>
+												</div>
+												<div class="col-md-8" style="padding: 0; margin: 0;">
+													<input type="date" class="form-control">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2">
+											<div class="row">
+												<div class="col-md-1"></div>
+												<div class="col-md-10"
+													style="padding: 0; margin-right: -20px;">
+													<label>输入信息：</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-10">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="input-group"
+														style="padding: 0; margin-left: -50px; margin-right: 25px;">
+														<!--没有此类会另起一段-->
+														<input id="select1" type="text" class="form-control"
+															placeholder="输入姓名或编号" value=""
+															onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+														<span class="input-group-btn"> <!--和class="input-group"一起用，没有此类会另起一段-->
+															<button type="submit" class="btn btn-primary fr">
+																查找
+																<tton></span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="panel-body">
+									<div class="result">
+
+										<table
+											class="table table-condensed table-bordered table-hover result_table_history">
+											<thead>
+												<tr>
+
+													<th>报销编号</th>
+													<th>用户姓名</th>
+													<th>费用总计</th>
+													<th>报销金额</th>
+													<th>报销日期</th>
+													<th>查看</th>
+
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>12345678</td>
+													<td>刘备</td>
+													<td>2000</td>
+													<td>500</td>
+													<td>2016/05/01</td>
+													<td><button class="btn btn-info btn-sm">详细信息</button></td>
+												</tr>
+												<tr>
+													<td>12345678</td>
+													<td>刘备</td>
+													<td>2000</td>
+													<td>500</td>
+													<td>2016/05/01</td>
+													<td><button class="btn btn-info btn-sm">详细信息</button></td>
+												</tr>
+												<tr>
+													<td>12345678</td>
+													<td>刘备</td>
+													<td>2000</td>
+													<td>500</td>
+													<td>2016/05/01</td>
+													<td><button class="btn btn-info btn-sm">详细信息</button></td>
+												</tr>
+												<tr>
+													<td>12345678</td>
+													<td>刘备</td>
+													<td>2000</td>
+													<td>500</td>
+													<td>2016/05/01</td>
+													<td><button class="btn btn-info btn-sm">详细信息</button></td>
+												</tr>
+												<tr>
+													<td>12345678</td>
+													<td>刘备</td>
+													<td>2000</td>
+													<td>500</td>
+													<td>2016/05/01</td>
+													<td><button class="btn btn-info btn-sm">详细信息</button></td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+
+									<nav style="text-align: center;">
+										<ul class="pagination pagination-sm" style="margin-bottom: 0;">
+											<li class="disabled"><a href="#" aria-label="Previous"><span
+													aria-hidden="true">&laquo;</span></a></li>
+											<li class="active"><a href="#">1 <span
+													class="sr-only">(current)</span></a></li>
+											<li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">4 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">5<span class="sr-only">(current)</span></a></li>
+											<li><a href="#" aria-label="Next"><span
+													aria-hidden="true">&raquo;</span></a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="foot "></div>
+	</div>
+
+	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

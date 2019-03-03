@@ -1,0 +1,79 @@
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+body {
+	margin: 0;
+}
+
+.container-all {
+	margin: 0 auto;
+	width: 1200px;
+	height: 750px;
+	background-color: paleturquoise;
+}
+
+.head {
+	height: 90px;
+	background-image: url(../img/head.png);
+}
+
+.exit h4, .user h4 {
+	margin-right: 20px;
+	margin-top: 65px;
+	text-align: center;
+	margin-bottom: 0;
+	font-size: 18px;
+	font-family: inherit;
+	font-weight: 500;
+	line-height: 1.1;
+	color: inherit;
+}
+
+.context {
+	height: 598px;
+}
+
+.link {
+	width: 400px;
+	margin: 150px auto 0;
+}
+
+.search {
+	width: 200px;
+	height: 200px;
+	margin: 20px auto;
+}
+
+.socials {
+	display: block;
+	width: 150px;
+	height: 150px;
+	background: url(../img/user/Bigcircle1.png) no-repeat;
+	cursor: pointer;
+	position: relative;
+}
+
+.socials {
+	margin: 50px auto 0;
+}
+
+ul.reset, ul.reset li {
+	display: block;
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+ul.reset li {
+	position: absolute;
+}
+
+.foot {
+	height: 80px;
+	background-color: grey;
+}

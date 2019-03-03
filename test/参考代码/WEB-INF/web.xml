@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.4" xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee   http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">
+  <servlet>
+    <servlet-name>action</servlet-name>
+    <servlet-class>org.apache.struts.action.ActionServlet</servlet-class>
+    <init-param>
+      <param-name>config</param-name>
+      <param-value>/WEB-INF/struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>config/catalog</param-name>
+    	<param-value>/WEB-INF/catalog-struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>config/authorize</param-name>
+    	<param-value>/WEB-INF/authorize-struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>config/shopping</param-name>
+    	<param-value>/WEB-INF/shopping-struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+    	<param-name>config/information</param-name>
+    	<param-value>/WEB-INF/information-struts-config.xml</param-value>
+    </init-param>
+    <init-param>
+    <param-name>config/management</param-name>
+    	<param-value>/WEB-INF/management-struts-config.xml</param-value>
+    </init-param>
+    <load-on-startup>0</load-on-startup>
+  </servlet>
+  
+  <filter>
+  	<filter-name>ActionFilter</filter-name>
+  		<filter-class>com.super4.dang.action.ActionFilter</filter-class>
+  </filter>
+  <filter-mapping>
+  		<filter-name>ActionFilter</filter-name>
+  		<url-pattern>*.do</url-pattern>
+  </filter-mapping>
+  <servlet-mapping>
+    <servlet-name>action</servlet-name>
+    <url-pattern>*.do</url-pattern>
+  </servlet-mapping>
+</web-app>
+

@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>查询报销历史</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+<style>
+td {
+	border: solid #ebebeb;
+	border-width: 1px;
+	padding: 10px 0px;
+}
+</style>
+</head>
+
+<body>
+	<div class="container-all">
+
+		<div class="head">
+			<div class="exit  fr">
+				<a href="../login.html" target="_top"><h4>退出登录</h4></a>
+			</div>
+			<div class="user  fr ">
+				<h4>当前管理员：XXX</h4>
+			</div>
+		</div>
+		<div class="context">
+			<div class="navigation col-md-2">
+				<div class="function "></div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion"
+									href="#collapseOne">个人&单位信息
+									<div class="glyphicon glyphicon-chevron-down fr"></div>
+								</a>
+							</h3>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="search_person.html" id="people_info">个人基本信息</a></li>
+									<li><a href="search_company.html" id="company_info">单位基本信息</a></li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion"
+									href="#collapseTwo">医疗项目信息
+									<div class="glyphicon glyphicon-chevron-down fr"></div>
+								</a>
+							</h3>
+						</div>
+						<div id="collapseTwo" class="panel-collapse collapse">
+							<div class="panel-body">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="search_institution.html"
+										id="institution_info">医疗机构信息</a></li>
+									<li><a href="search_facility.html" id="facility_info">服务设施信息</a></li>
+									<li><a href="search_disease.html" id="disease_info">病种信息</a></li>
+									<li><a href="search_drug.html" id="drug_info">药品信息</a></li>
+									<li><a href="search_zhenliao.html" id="zhenliao_info">诊疗项目信息</a></li>
+									<li><a href="search_canshu.html" id="parameter_info">待遇参数信息</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a href="history.html">报销历史信息</a>
+							</h3>
+						</div>
+
+					</div>
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a href="log.html">查看日志</a>
+							</h3>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			<div class="information col-md-10">
+				<div id="history">
+					<div class="menu" name="subnav_history" id="subnav_history">
+						<a href="admin.html"><button type="submit"
+								class="btn btn-primary mybutton fr" style="margin-right: 10px;">回到首页</button></a>
+					</div>
+					<div class="menu-context" name="search_history" id="search_history">
+						<div class="table-title">
+							<h3>报销历史信息查询</h3>
+						</div>
+						<div class="search_history">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+									<div class="row" style="margin-top: 10px;">
+										<div class="col-md-4">
+											<div class="row">
+												<div class="col-md-1"></div>
+												<div class="col-md-4"
+													style="padding: 0; margin-right: -20px;">
+													<label>查询方式：</label>
+												</div>
+												<div class="col-md-6" style="padding: 0; margin: 0;">
+													<select id="basic2" class=" show-tick form-control"
+														style="padding: 0; margin: 0;" onchange=change(this.value)>
+														<!-- <option class="get-class" disabled>英语</option>-->
+														<option selected value="alllist">所有条目</option>
+														<option value="id">编号</option>
+														<option value="name">姓名</option>
+													</select>
+
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row">
+												<div class="col-md-4"
+													style="padding: 0; margin-left: -20px; margin-right: -20px;">
+													<label>起始时间：</label>
+												</div>
+												<div class="col-md-8" style="padding: 0; margin: 0;">
+													<input type="date" class="form-control">
+												</div>
+											</div>
+										</div>
+										<div class="col-md-4">
+											<div class="row">
+												<div class="col-md-4"
+													style="padding: 0; margin-left: -20px; margin-right: -20px;">
+													<label>结束时间：</label>
+												</div>
+												<div class="col-md-8" style="padding: 0; margin: 0;">
+													<input type="date" class="form-control">
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-md-2">
+											<div class="row">
+												<div class="col-md-1"></div>
+												<div class="col-md-10"
+													style="padding: 0; margin-right: -20px;">
+													<label>输入信息：</label>
+												</div>
+											</div>
+										</div>
+										<div class="col-md-10">
+											<div class="row">
+												<div class="col-md-12">
+													<div class="input-group"
+														style="padding: 0; margin-left: -50px; margin-right: 25px;">
+														<!--没有此类会另起一段-->
+														<input id="select1" type="text" class="form-control"
+															placeholder="输入姓名或编号" value=""
+															onfocus="if(!this._haschanged){this.value=''};this._haschanged=true;">
+														<span class="input-group-btn"> <!--和class="input-group"一起用，没有此类会另起一段-->
+															<button type="submit" class="btn btn-primary fr">
+																查找
+																<tton></span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="panel-body">
+									<div class="result">
+
+										<table
+											class="table table-condensed table-bordered table-hover result_table_history">
+											<thead>
+												<tr>
+
+													<th>报销编号</th>
+													<th>用户姓名</th>
+													<th>费用总计</th>
+													<th>报销金额</th>
+													<th>报销日期</th>
+													<th>查看</th>
+
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>123455667898</td>
+													<td>张三</td>
+													<td>2000</td>
+													<td>500</td>
+													<td>2016/05/01</td>
+													<td><button class="btn btn-info btn-sm"
+															data-toggle="modal" data-target=".bs-example-modal-lg">详细信息</button></td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+
+									<nav style="text-align: center;">
+										<ul class="pagination pagination-sm" style="margin-bottom: 0;">
+											<li class="disabled"><a href="#" aria-label="Previous"><span
+													aria-hidden="true">&laquo;</span></a></li>
+											<li class="active"><a href="#">1 <span
+													class="sr-only">(current)</span></a></li>
+											<li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">4 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">5<span class="sr-only">(current)</span></a></li>
+											<li><a href="#" aria-label="Next"><span
+													aria-hidden="true">&raquo;</span></a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="modal fade bs-example-modal-lg" data-backdrop="static"
+						data-keyboard="false" tabindex="-1" role="dialog"
+						aria-labelledby="myLargeModalLabel" aria-hidden="true">
+						<div class="modal-dialog modal-lg">
+							<div class="modal-content">
+								<div class="modal-header">
+									<button type="button" class="close" data-dismiss="modal">
+										<span aria-hidden="true">&times;</span><span class="sr-only">Close</span>
+									</button>
+									<h3 class="modal-title table-title">医疗费用结算清单</h3>
+								</div>
+								<div class="modal-body">
+									<table class="table table-condensed">
+										<tbody style="column-count: 8;">
+											<tr>
+												<td colspan="8"><label style="float: right">日</label> <label
+													style="float: right">25</label> <label style="float: right">月</label>
+													<label style="float: right">04</label> <label
+													style="float: right">年</label> <label style="float: right">2016</label>
+													<Label style="float: right">结算日期：</Label></td>
+											</tr>
+										</tbody>
+										<tbody style="column-count: 8;">
+											<tr>
+												<td colspan="2"><Label>单位名称</Label></td>
+												<td colspan="2">大连理工大学</td>
+												<td colspan="2"><Label>单位编号</Label></td>
+												<td colspan="2">1166238</td>
+											</tr>
+											<tr>
+												<td colspan="1"><Label>姓名</Label></td>
+												<td colspan="1">张三</td>
+												<td colspan="1"><Label>个人编号</Label></td>
+												<td colspan="1">1166238</td>
+												<td colspan="2"><Label>医疗人员类别</Label></td>
+												<td colspan="2">新农村合作医疗保险</td>
+											</tr>
+											<tr>
+												<td colspan="2"><Label>报销类别</Label></td>
+												<td colspan="2">甲类</td>
+												<td colspan="2"><Label>报销编号</Label></td>
+												<td colspan="2">123455667898</td>
+											</tr>
+											<tr>
+												<td colspan="2"><Label>就诊医院</Label></td>
+												<td colspan="2">大连市开发区医院</td>
+												<td colspan="2"><Label>就诊时段</Label></td>
+												<td colspan="2">2016-03-18</td>
+											</tr>
+											<tr>
+												<td colspan="8"><Label>结算明细：</Label></td>
+											</tr>
+											<tr>
+												<td colspan="8">
+													<div style="margin-left: 40px;">
+														<Label>起付标准：</Label> <Label>200</Label> <Label>元</Label>
+													</div>
+													<ul>
+														<Label>甲类项目：</Label>
+														<table class="table table-condensed" style="margin: 0;">
+															<tr>
+																<td colspan="1"><Label>项目等级</Label></td>
+																<td colspan="1"><label>项目类别</label></td>
+																<td colspan="1"><Label>编号</Label></td>
+																<td colspan="2"><Label>名称</Label></td>
+																<td colspan="1"><Label>单价</Label></td>
+																<td colspan="1"><label>数量</label></td>
+																<td colspan="1"><Label>总额</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>甲类</Label></td>
+																<td colspan="1"><label>药品</label></td>
+																<td colspan="1"><Label>20160425</Label></td>
+																<td colspan="2"><Label>青霉素</Label></td>
+																<td colspan="1"><Label>20.00</Label></td>
+																<td colspan="1"><label>4</label></td>
+																<td colspan="1"><Label>80.00</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>甲类</Label></td>
+																<td colspan="1"><label>药品</label></td>
+																<td colspan="1"><Label>20160423</Label></td>
+																<td colspan="2"><Label>葡萄糖注射液</Label></td>
+																<td colspan="1"><Label>15.00</Label></td>
+																<td colspan="1"><label>2</label></td>
+																<td colspan="1"><Label>30.00</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>甲类</Label></td>
+																<td colspan="1"><label>药品</label></td>
+																<td colspan="1"><Label>15368675</Label></td>
+																<td colspan="2"><Label>白加黑</Label></td>
+																<td colspan="1"><Label>20.00</Label></td>
+																<td colspan="1"><label>5</label></td>
+																<td colspan="1"><Label>100.00</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>甲类</Label></td>
+																<td colspan="1"><label>诊疗项目</label></td>
+																<td colspan="1"><Label>5534143</Label></td>
+																<td colspan="2"><Label>X光</Label></td>
+																<td colspan="1"><Label>200.00</Label></td>
+																<td colspan="1"><label>1</label></td>
+																<td colspan="1"><Label>200.00</Label></td>
+															</tr>
+														</table>
+													</ul>
+													<ul>
+														<Label>乙类项目：</Label>
+														<table class="table table-condensed" style="margin: 0;">
+															<tr>
+																<td colspan="1"><Label>项目等级</Label></td>
+																<td colspan="1"><label>项目类别</label></td>
+																<td colspan="1"><Label>编号</Label></td>
+																<td colspan="2"><Label>名称</Label></td>
+																<td colspan="1"><Label>单价</Label></td>
+																<td colspan="1"><label>数量</label></td>
+																<td colspan="1"><Label>总额</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>乙类</Label></td>
+																<td colspan="1"><label>药品</label></td>
+																<td colspan="1"><Label>20160434</Label></td>
+																<td colspan="2"><Label>罗红霉素</Label></td>
+																<td colspan="1"><Label>20.00</Label></td>
+																<td colspan="1"><label>2</label></td>
+																<td colspan="1"><Label>40.00</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>乙类</Label></td>
+																<td colspan="1"><label>诊疗项目</label></td>
+																<td colspan="1"><Label>5534007</Label></td>
+																<td colspan="2"><Label>B超</Label></td>
+																<td colspan="1"><Label>70.00</Label></td>
+																<td colspan="1"><label>1</label></td>
+																<td colspan="1"><Label>70.00</Label></td>
+															</tr>
+														</table>
+
+													</ul>
+													<ul>
+														<Label>自费项目：</Label>
+														<table class="table table-condensed" style="margin: 0;">
+															<tr>
+																<td colspan="1"><Label>项目等级</Label></td>
+																<td colspan="1"><label>项目类别</label></td>
+																<td colspan="1"><Label>编号</Label></td>
+																<td colspan="2"><Label>名称</Label></td>
+																<td colspan="1"><Label>单价</Label></td>
+																<td colspan="1"><label>数量</label></td>
+																<td colspan="1"><Label>总额</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>丙类</Label></td>
+																<td colspan="1"><label>药品</label></td>
+																<td colspan="1"><Label>20160434</Label></td>
+																<td colspan="2"><Label>感康</Label></td>
+																<td colspan="1"><Label>15.00</Label></td>
+																<td colspan="1"><label>1</label></td>
+																<td colspan="1"><Label>15.00</Label></td>
+															</tr>
+															<tr>
+																<td colspan="1"><Label>丙类</Label></td>
+																<td colspan="1"><label>诊疗项目</label></td>
+																<td colspan="1"><Label>20160334</Label></td>
+																<td colspan="2"><Label>CT</Label></td>
+																<td colspan="1"><Label>300.00</Label></td>
+																<td colspan="1"><label>1</label></td>
+																<td colspan="1"><Label>300.00</Label></td>
+															</tr>
+														</table>
+													</ul> <!-- <hr style="height:1px;border:none;border-top:1px solid #555555;">-->
+												</td>
+											</tr>
+											<tr>
+												<td colspan="2"><Label>个人自费费用</Label></td>
+												<td colspan="2"><em>315.00</em> <Label>元</Label></td>
+												<td colspan="2"><Label>中心报销金额：</Label></td>
+												<td colspan="2"><em>350.00</em> <Label>元</Label></td>
+											</tr>
+											<tr>
+												<td colspan="2" rowspan="2"><Label
+													style="margin-top: 30px;">拨付金额</Label></td>
+												<td colspan="6" rowspan="2">
+													<table class="table table-condensed" frame="void"
+														style="margin: 0;">
+														<tr>
+															<td width="8%"><label>大写：</label></td>
+															<td><Label>零</Label></td>
+															<td><Label>万</Label></td>
+															<td><Label>零</Label></td>
+															<td><Label>仟</Label></td>
+															<td><Label>四</Label></td>
+															<td><Label>佰</Label></td>
+															<td><Label>八</Label></td>
+															<td><Label>拾</Label></td>
+															<td><Label>五</Label></td>
+															<td><Label>元</Label></td>
+															<td><Label>零</Label></td>
+															<td><Label>角</Label></td>
+															<td><Label>零</Label></td>
+															<td><Label>分</Label></td>
+														</tr>
+														<tr>
+															<td colspan="1"><label>小写：</label></td>
+															<td colspan="2"><em>485.00</em></td>
+															<td colspan="2"><Label>元</Label></td>
+															<td colspan="10"></td>
+														</tr>
+													</table>
+												</td>
+											</tr>
+										</tbody>
+										<tbody style="column-count: 8;">
+											<tr>
+												<td colspan="8"><br>
+													本表一式三联，财务科、结算科、参保人各一联。本表一式三联，财务科、结算科、参保人各一联。</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="modal-footer">
+									<button type="button" class="btn btn-default"
+										data-dismiss="modal">关闭</button>
+									<button type="button" class="btn btn-primary"
+										data-dismiss="modal">保存</button>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="foot "></div>
+	</div>
+
+	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

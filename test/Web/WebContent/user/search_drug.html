@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+<title>查询药品信息</title>
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+<link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+</head>
+
+<body>
+	<div class="container-all">
+
+		<div class="head">
+			<div class="exit  fr">
+				<a href="../login.html" target="_top"><h4>退出登录</h4></a>
+			</div>
+			<div class="user  fr ">
+				<h4>当前用户：XXX</h4>
+			</div>
+		</div>
+		<div class="context">
+			<div class="navigation col-md-2">
+				<div class="function "></div>
+				<div class="panel-group" id="accordion">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<h3 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion"
+									href="#collapseOne">信息查询
+									<div class="glyphicon glyphicon-chevron-down fr"></div>
+								</a>
+							</h3>
+						</div>
+						<div id="collapseOne" class="panel-collapse collapse in">
+							<div class="panel-body">
+								<ul class="nav nav-pills nav-stacked">
+									<li><a href="search_person.html" id="people_info">个人基本信息</a></li>
+									<li><a href="search_history.html" id="parameter_info">报销历史信息</a></li>
+									<li><a href="search_company.html" id="company_info">单位基本信息</a></li>
+									<li><a href="search_institution.html"
+										id="institution_info">医疗机构信息</a></li>
+									<li><a href="search_facility.html" id="facility_info">服务设施信息</a></li>
+									<li><a href="search_disease.html" id="disease_info">病种信息
+									</a></li>
+									<li><a href="search_drug.html" id="drug_info">药品信息
+											<div class="glyphicon glyphicon-ok fr"></div>
+									</a></li>
+									<li><a href="search_zhenliao.html" id="zhenliao_info">诊疗项目信息</a></li>
+									<li><a href="search_canshu.html" id="parameter_info">待遇参数信息</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="information col-md-10">
+				<div id="drug">
+					<div class="menu" name="subnav_drug" id="subnav_drug">
+						<a href="search_drug.html"><button type="submit"
+								class="btn btn-primary mybutton active">查询信息</button></a> <a
+							href="user.html"><button type="submit"
+								class="btn btn-primary mybutton fr" style="margin-right: 10px;">回到首页</button></a>
+					</div>
+					<div class="menu-context" name="search_drug" id="search_drug">
+						<div class="table-title">
+							<h3>药品信息查询</h3>
+						</div>
+						<div class="search_drug">
+							<div class="panel panel-default">
+								<div class="panel-heading">
+
+									<div class="row" style="margin-top: 10px;">
+
+										<div class="col-md-2" style="padding-right: 0;">
+											<label class="fr" style="margin-top: 7px;">查询方式：</label>
+										</div>
+										<div class="col-md-3" style="padding-left: 0;">
+											<select class="selectpicker form-control ">
+												<option selected>所有条目</option>
+												<option>药品编号</option>
+												<option>药品名称</option>
+												<option>收费项目等级</option>
+												<option>医院等级</option>
+												<option>药厂名称</option>
+												<option>国家目录编码</option>
+											</select>
+										</div>
+										<div class="col-md-2" style="padding-right: 0;">
+											<label class="fr" style="margin-top: 7px;">输入项：</label>
+										</div>
+										<div class="col-md-5" style="padding-left: 0;">
+											<div class="input-group">
+												<input type="text" class="form-control" placeholder="查找">
+												<span class="input-group-btn">
+													<button type="submit" class="btn btn-primary fr">查找</button>
+												</span>
+											</div>
+										</div>
+									</div>
+
+								</div>
+								<div class="panel-body">
+									<div class="result">
+
+										<table
+											class="table table-condensed table-bordered table-hover result_table_drug">
+											<thead>
+												<tr>
+													<th>药品编号</th>
+													<th>药品名称</th>
+													<th>收费项目等级</th>
+													<th>最高限价</th>
+													<th>医院等级</th>
+													<th>药厂名称</th>
+													<th>国家目录编码</th>
+													<th>英文名称</th>
+													<th>处方药标志</th>
+													<th>收费类别</th>
+													<th>计量单位</th>
+													<th>院内制剂标志</th>
+													<th>剂型</th>
+													<th>单位</th>
+													<th>规格</th>
+													<th>备注</th>
+													<th>国药准字</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td>ML2875436</td>
+													<td>脑白金</td>
+													<td>一级</td>
+													<td>2000</td>
+													<td>甲</td>
+													<td>XX制药厂</td>
+													<td>18AA 38</td>
+													<td>XXX</td>
+													<td>是</td>
+													<td>药品</td>
+													<td>支</td>
+													<td>是</td>
+													<td>注射水针剂</td>
+													<td>XX医院</td>
+													<td>10支/盒</td>
+													<td>婴儿不能用</td>
+													<td>国药准字H10970001</td>
+												</tr>
+												<tr>
+													<td>ML2875436</td>
+													<td>脑白金</td>
+													<td>一级</td>
+													<td>2000</td>
+													<td>甲</td>
+													<td>XX制药厂</td>
+													<td>18AA 38</td>
+													<td>XXX</td>
+													<td>是</td>
+													<td>药品</td>
+													<td>支</td>
+													<td>是</td>
+													<td>注射水针剂</td>
+													<td>XX医院</td>
+													<td>10支/盒</td>
+													<td>婴儿不能用</td>
+													<td>国药准字H10970001</td>
+												</tr>
+												<tr>
+													<td>ML2875436</td>
+													<td>脑白金</td>
+													<td>一级</td>
+													<td>2000</td>
+													<td>甲</td>
+													<td>XX制药厂</td>
+													<td>18AA 38</td>
+													<td>XXX</td>
+													<td>是</td>
+													<td>药品</td>
+													<td>支</td>
+													<td>是</td>
+													<td>注射水针剂</td>
+													<td>XX医院</td>
+													<td>10支/盒</td>
+													<td>婴儿不能用</td>
+													<td>国药准字H10970001</td>
+												</tr>
+												<tr>
+													<td>ML2875436</td>
+													<td>脑白金</td>
+													<td>一级</td>
+													<td>2000</td>
+													<td>甲</td>
+													<td>XX制药厂</td>
+													<td>18AA 38</td>
+													<td>XXX</td>
+													<td>是</td>
+													<td>药品</td>
+													<td>支</td>
+													<td>是</td>
+													<td>注射水针剂</td>
+													<td>XX医院</td>
+													<td>10支/盒</td>
+													<td>婴儿不能用</td>
+													<td>国药准字H10970001</td>
+												</tr>
+												<tr>
+													<td>ML2875436</td>
+													<td>脑白金</td>
+													<td>一级</td>
+													<td>2000</td>
+													<td>甲</td>
+													<td>XX制药厂</td>
+													<td>18AA 38</td>
+													<td>XXX</td>
+													<td>是</td>
+													<td>药品</td>
+													<td>支</td>
+													<td>是</td>
+													<td>注射水针剂</td>
+													<td>XX医院</td>
+													<td>10支/盒</td>
+													<td>婴儿不能用</td>
+													<td>国药准字H10970001</td>
+												</tr>
+
+											</tbody>
+										</table>
+
+									</div>
+
+									<nav style="text-align: center;">
+										<ul class="pagination pagination-sm" style="margin-bottom: 0;">
+											<li class="disabled"><a href="#" aria-label="Previous"><span
+													aria-hidden="true">&laquo;</span></a></li>
+											<li class="active"><a href="#">1 <span
+													class="sr-only">(current)</span></a></li>
+											<li><a href="#">2 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">3 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">4 <span class="sr-only">(current)</span></a></li>
+											<li><a href="#">5<span class="sr-only">(current)</span></a></li>
+											<li><a href="#" aria-label="Next"><span
+													aria-hidden="true">&raquo;</span></a></li>
+										</ul>
+									</nav>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="foot "></div>
+	</div>
+
+	<script src="../js/jquery-2.2.0.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/bootstrap.min.js" type="text/javascript"
+		charset="utf-8"></script>
+	<script src="../js/index.js" type="text/javascript" charset="utf-8"></script>
+
+</body>
+
+</html>

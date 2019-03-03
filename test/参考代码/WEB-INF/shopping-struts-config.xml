@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts-config PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN" "http://struts.apache.org/dtds/struts-config_1_2.dtd">
+
+<struts-config>
+	<form-beans>
+		<form-bean name="cartForm" type="com.super4.dang.form.CartItemForm"></form-bean>
+		<form-bean name="orderForm" type="com.super4.dang.form.OrderForm"></form-bean>
+	</form-beans>
+	<global-forwards >
+		<forward name="success" path="showCart.do" redirect="true"></forward>
+	</global-forwards>
+	<action-mappings>
+	<action path="/showCart" type="com.super4.dang.action.CartAction" parameter="show">
+		<forward name="success" path="/WEB-INF/jsp/shopping/cart.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/addItems" type="com.super4.dang.action.CartAction" parameter="add" name="cartForm">
+	</action>
+	<action path="/dropCart" type="com.super4.dang.action.CartAction" parameter="drop" name="cartForm">
+	</action>
+	<action path="/updateCart" type="com.super4.dang.action.CartAction" parameter="update" name="cartForm">
+	</action>
+	<action path="/recoveryItems" type="com.super4.dang.action.CartAction" parameter="recovery" name="cartForm">
+	</action>
+	
+	<!-- Order -->
+	<action path="/address" type="com.super4.dang.action.OrderAction" parameter="address">
+		<forward name="success" path="/WEB-INF/jsp/shopping/address.jsp" contextRelative="true"></forward>
+		<forward name="fail" path="/WEB-INF/jsp/shopping/address-info.jsp" contextRelative="true"></forward>
+		<forward name="fail1" path="/WEB-INF/jsp/shopping/orderfail.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/sendway" type="com.super4.dang.action.OrderAction" parameter="sendway" name="orderForm">
+		<forward name="success" path="/WEB-INF/jsp/shopping/sendway.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/sendway1" type="com.super4.dang.action.OrderAction" parameter="sendway1">
+		<forward name="success" path="/WEB-INF/jsp/shopping/sendway.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/sendway2" type="com.super4.dang.action.OrderAction" parameter="sendway2">
+		<forward name="success" path="/WEB-INF/jsp/shopping/sendway.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/sure" type="com.super4.dang.action.OrderAction" parameter="sure">
+		<forward name="success" path="/WEB-INF/jsp/shopping/sure-info.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/order" type="com.super4.dang.action.OrderAction" parameter="order">
+		<forward name="success" path="/WEB-INF/jsp/shopping/order.jsp" contextRelative="true"></forward>
+	</action>
+	<action path="/orderok" type="com.super4.dang.action.OrderAction" parameter="orderok" name="orderForm">
+		<forward name="success" path="/WEB-INF/jsp/shopping/orderok.jsp" contextRelative="true"></forward>
+		<forward name="fail" path="/WEB-INF/jsp/shopping/orderfail.jsp" contextRelative="true"></forward>
+	</action>
+	</action-mappings>
+	<controller processorClass="com.super4.dang.controller.ShoppingController"></controller>
+	<message-resources parameter="ApplicationResources" />
+</struts-config>
+

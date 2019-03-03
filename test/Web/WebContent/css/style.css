@@ -1,0 +1,230 @@
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.container-all {
+	margin: 0 auto;
+	width: 1200px;
+	height: 750px;
+	background-color: paleturquoise;
+}
+
+.head {
+	height: 90px;
+	background-image: url(../img/head.png);
+}
+
+.function {
+	height: 100px;
+	background-image: url(../img/menu.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+.exit h4, .user h4 {
+	margin-right: 20px;
+	margin-top: 65px;
+	text-align: center;
+	margin-bottom: 0;
+}
+
+.context {
+	height: 598px;
+}
+
+.navigation {
+	height: 100%;
+	background-color: whitesmoke;
+}
+
+h2 {
+	text-align: center;
+}
+
+.panel-group {
+	margin-bottom: 10px;
+}
+
+.admin {
+	height: 100%;
+	background-image: url(../img/admin.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 0;
+	padding-right: 15px;
+}
+
+.information {
+	height: 100%;
+	background-image: url(../img/back.png);
+	background-repeat: no-repeat;
+	background-position: top right;
+	padding: 0;
+	padding-right: 15px;
+}
+
+h3 {
+	margin-top: 0;
+	text-align: center;
+}
+
+.menu, .cancel_menu {
+	height: 32px;
+	width: 1000px;
+	padding-left: 10px;
+	background-color: #337AB7;
+}
+
+.baoxiao_menu {
+	width: 1200px;
+	height: 40px;
+	padding-left: 10px;
+	background-color: #337AB7;
+}
+
+.cancel_menu {
+	width: 1200px;
+}
+
+.mybutton {
+	border-color: #337ab7;
+	border: hidden;
+	border-radius: 0;
+}
+
+.choose.active {
+	background-color: whitesmoke;
+	color: black;
+}
+
+.menu-context {
+	height: 566px;
+	width: 1000px;
+	margin: auto;
+	overflow-y: auto;
+}
+
+.user_menu-context {
+	height: 566px;
+	width: 1200px;
+}
+
+.table-title {
+	margin-top: 20px;
+	font-family: "楷体";
+}
+
+.table-title h3 {
+	font-weight: bold;
+	font-size: 30px;
+}
+
+.search_person, .search_company, .search_history, .search_disease,
+	.search_drug, .search_facility, .search_zhenliao, .search_institution,
+	.search_log {
+	height: 400px;
+	width: 850px;
+	margin: 10px auto;
+}
+
+.add_info {
+	width: 850px;
+	margin: 10px auto;
+}
+
+.search_canshu {
+	height: 450px;
+	width: 900px;
+	margin: 10px auto;
+}
+
+.user_search_history {
+	height: 400px;
+	width: 1050px;
+	margin: 10px auto;
+}
+
+.result {
+	overflow: auto;
+}
+
+.result_table_person {
+	width: 1200px;
+}
+
+.result_table_company, .result_table_disease, .result_table_history,
+	.result_table_facility, .result_table_canshu1, .result_table_canshu2,
+	.result_table_canshu3, .result_table_info, .container {
+	width: 810px;
+	margin: auto;
+}
+
+.result_table_drug {
+	width: 1700px;
+}
+
+.result_table_zhenliao {
+	width: 1000px;
+}
+
+.result_table_institution {
+	width: 1200px;
+}
+
+.user_result_table_history {
+	width: 1000px;
+	margin: auto;
+}
+
+label {
+	text-align: right;
+	margin-bottom: 0;
+	margin-top: 7px;
+	padding-right: 0;
+}
+
+.add_persons, .add_companies, .add_drugs, .add_disease, .add_facilities,
+	.add_zhenliao, .add_institutions, .add_canshu, .search_info {
+	width: 800px;
+	background-color: whitesmoke;
+	border-radius: 20px;
+	margin: 10px auto;
+	border: 1px solid gray;
+}
+
+.row {
+	margin-bottom: 10px;
+}
+
+.foot {
+	height: 80px;
+	background-color: grey;
+}
+
+input {
+	margin-top: 5px;
+}
+
+input.error {
+	border: 1px solid red;
+}
+
+label.error {
+	padding-left: 16px;
+	font-weight: bold;
+	color: red;
+}
+
+input.notice {
+	border: 1px solid blue;
+}
+
+label.notice{
+	padding-left: 16px;
+	font-weight: bold;
+	color: blue;
+}
