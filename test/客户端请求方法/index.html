@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+
+<body>
+
+    <!--
+                    
+                    get 方式 :
+                    
+                    地址栏:http://10.1.4.104:9090/?username=%E5%BC%A0%E5%B8%85&password=123&password=123&sex=nan&java=java&country=cn
+                    
+                    GET /?username=%E5%BC%A0%E5%B8%85&password=123&password=123&sex=nan&java=java&html=html&country=cn HTTP/1.1
+                    Host: 10.1.4.104:9090
+                    Connection: keep-alive
+                    Upgrade-Insecure-Requests: 1
+                    User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+                    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+                    Referer: http://127.0.0.1:8020/HtmlStudy/htmlDemo/GetAndPostDemo14.html?__hbt=1522824703984
+                    Accept-Encoding: gzip, deflate, sdch
+                    Accept-Language: zh-CN,zh;q=0.8
+                    
+                    
+                    post方式 :
+                    
+                    地址栏: http://10.1.4.104:9090/
+                    
+                    POST / HTTP/1.1
+                    Host: 10.1.4.104:9090
+                    Connection: keep-alive
+                    Content-Length: 92
+                    Cache-Control: max-age=0
+                    Origin: http://127.0.0.1:8020
+                    Upgrade-Insecure-Requests: 1
+                    User-Agent: Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/56.0.2924.87 Safari/537.36
+                    Content-Type: application/x-www-form-urlencoded
+                    Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+                    Referer: http://127.0.0.1:8020/HtmlStudy/htmlDemo/GetAndPostDemo14.html?__hbt=1522824703984
+                    Accept-Encoding: gzip, deflate
+                    Accept-Language: zh-CN,zh;q=0.8
+                    
+                    username=%E5%BC%A0%E5%B8%85&password=123&password=123&sex=nan&java=java&html=html&country=cn
+                                        
+             -->
+
+
+
+    <!--
+                    庖丁解牛 :
+                    
+                    <form action="https:www.baidu.com"></form>
+                    
+                    
+                    [1] action : 指定数据传输的目标地址
+                    
+                    [2] method  : 指定数据传输的方式  ; 默认是get
+                    
+                           (1)get
+       
+                           (2)post
+                           
+                           
+             小结 :对客户端而言 get与post的区别 :
+             
+             1 . 显示位置 :  get提交的数据显示在地址栏中 ,post提交的数据不显示在地址栏中
+             
+             2.  安全风险 : get提交时对敏感数据是不安全的,post提交时对敏感数据是安全的 . 敏感数据: 例如密码
+             
+             3.  数据量 :    get提交的数据量不能过大,因为地址栏存储体积有限,post提交支持大数据量
+             
+             4.  存储位置 :  get提交是将数据封装到了请求信息的请求行中 ;而 post提交是将数据封装到了请求信息的请求体中
+             
+             
+                    1.get与post在服务器端的区别?
+                    
+                    
+                    问题 : 在使用form表单提交到Tomcat服务器时,若提交的数据是中文,服务器会先按默认iso8859-0进行解码而后出现乱码问题
+                    
+                    解决:  将数据先通过ISO9959-0进行编码,再使用指定的中文码表解码即可 ; 这种方式对get和post提交的数据都有效
+                    
+                    扩展 :  post还有另外一种解码方式 , 就是服务器端提供的一个对象 request 中的方法setCharacterEncoding()直接指定中文码表即可将数据以中文数据解析出来
+                    
+                                 这个request对象的解析方式仅对请求体中的数据有效
+                                 
+                    总结 : 因此我们表单提交时,建议用post
+                    
+                    
+                    2.客户端与服务器端交互的三种方式?
+                    
+                    [1] 地址栏输入url地址的方式   --get
+                    
+                    [2] 超链接的方式                  --get
+                    
+                    [3] 表单的方式                    --post
+                    
+                    
+                    小结: 在无数据传输情况下客户端与服务器端交互时用get,在有数据传输情况下客户端与服务器端交互时用post
+                    
+             
+             
+             -->
+
+    <form action="http://10.1.4.104:9090" method="get">
+        <table border="1" bordercolor="#6969" cellpadding="10" cellspacing="0" width="600">
+            <tr>
+                <th colspan="2">注册表单</th>
+            </tr>
+            <tr>
+                <td>用户名称</td>
+                <td><input type="text" name="username"></td>
+            </tr>
+            <tr>
+                <td>用户密码</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>确认密码</td>
+                <td><input type="password" name="password"></td>
+            </tr>
+            <tr>
+                <td>选择性别</td>
+                <td>
+                    <input type="radio" name="sex" value="nan"> 男
+                    <input type="radio" name="sex" value="nv"> 女
+                </td>
+            </tr>
+            <tr>
+                <td>选择技术</td>
+                <td>
+                    <input type="checkbox" name="java" value="java" />java
+                    <input type="checkbox" name="html" value="html" />html
+                    <input type="checkbox" name="css" value="css" />css
+                </td>
+            </tr>
+            <tr>
+                <td>选择国家</td>
+                <td>
+                    <select name="country">
+                        <option value="none">---请选择国家---</option>
+                        <option value="usa">---美国---</option>
+                        <option value="cn">---中国---</option>
+                        <option value="en">---英国---</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="reset" value="数据重置">
+                    <input type="submit" value="数据提交">
+                </th>
+            </tr>
+
+        </table>
+
+    </form>
+
+
+
+</body>
+
+</html>
