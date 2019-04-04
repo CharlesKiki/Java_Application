@@ -1,8 +1,8 @@
 package Test.HelloWorld;
 
 public class HelloWorld {
-    /* µÚÒ»¸öJava³ÌĞò
-     * Ëü½«´òÓ¡×Ö·û´® Hello World
+    /* ç¬¬ä¸€ä¸ªJavaç¨‹åº
+     * å®ƒå°†æ‰“å°å­—ç¬¦ä¸² Hello World
      */
 	public static void main(String ards[]) {
 		System.out.println("Hello,World!");
