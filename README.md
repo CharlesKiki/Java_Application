@@ -44,3 +44,11 @@ Java的语言特性，以及Web开发，桌面应用程序，移动开发的学�
 虽然使用Eclispe创建的项目，但是使用VScode依然可以轻松的编辑并且调试。
 ## 如何调试
 Tomcat默认的访问是http://localhost:8080/HelloWorld/index.jsp 这样的形式，省略掉webapps。
+
+使用VScode学习Java
+需要:
+Maven插件和Java插件
+
+包含的内容：
+Idea项目的Spring学习
+Vscode的Maven学习(Vscode配置文件建立在整个根目录下)

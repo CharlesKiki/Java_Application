@@ -1,0 +1,3 @@
+eclipse下创建maven spring MVC 项目
+
+首先这是一个Maven项目，其次这个项目在Eclipse中打开，所i总的项目由Maven管理，但是具体的编辑和其他工作由Eclispe完成
