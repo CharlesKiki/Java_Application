@@ -1,6 +1,8 @@
 # Java_Application
 Java的语言特性，以及Web开发，桌面应用程序，移动开发的学习例子。
 
+遵守GoogleJava编程规范
+
 ## 测试环境 
 **Windows10**
 **Tomcat9.0**
@@ -25,7 +27,7 @@ Java的语言特性，以及Web开发，桌面应用程序，移动开发的学�
         JST Server Adapters
         JST Server Adapters Extentions
         如果不嫌弃安装了额外的包，可以直接全选Web,XAML,JaveEE……的所有包。
-    
+
 
 > 注：如果没有安装以上的内容看可能会导致无法配置ServerRuntime，这是在创建动态Web应用的一个必须过程。并且甚至看看可能无法创建动态Web应用。
 
@@ -52,3 +54,10 @@ Maven插件和Java插件
 包含的内容：
 Idea项目的Spring学习
 Vscode的Maven学习(Vscode配置文件建立在整个根目录下)
+
+### 目录结构
+
+------
+
+DesignPattern -- IDEA项目
+
