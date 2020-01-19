@@ -11,6 +11,7 @@ import java.util.Vector;
 *
 * 使用BookAdapter核心目的是它是个多重继承，它既有旧类的功能
 * 又添加了需要的内容
+*
 * */
 
 public class AdaptPatternInOldSystem {
